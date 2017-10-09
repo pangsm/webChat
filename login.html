@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<!--    <meta charset="UTF-8">-->
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <!--应用环信本地js文件-->
+    <script type='text/javascript' src='js/webim.config.js'></script>
+    <script type='text/javascript' src='js/strophe-1.2.8.min.js'></script>
+    <script type='text/javascript' src='js/websdk-1.4.13.js'></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <link rel="stylesheet" href="css/login.css"/>
+    <script type="text/javascript" src="js/initeasemob.js"></script>
+    <script type="text/javascript" src="js/json2.js"></script>
+    <script type="text/javascript" src="js/json_parse.js"></script>
+    <script type="text/javascript" src="js/json_parse_state.js"></script>
+<script type="text/javascript" src="js/adapter.js"></script>
+    <script type="text/javascript" src="js/webrtc-1.4.12.js"></script>
+    <script  src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qqFace.js"></script>
+</head>
+<body onload="initeasemob();">
+<div id="center">
+    <h2 id="title">Login</h2>
+
+    <form action="#" id="form1" method="post">
+        <input type="text" name="" id="usernameLogin" placeholder="用户名" autofocus required/>
+        <input type="password" name=password" id="passwordLogin" autocomplete="on" placeholder="密码" required/>
+        <input type="button" value="登录" onclick="login();"/>
+    </form>
+    <label id="label_login">没有账号，<a href="#" onclick="showRegister();">现在注册！</a></label>
+
+    <form action="#" id="form2">
+        <input type="text" name="" id="username" placeholder="用户名" autofocus required/>
+        <input type="password" name=password" id="password" autocomplete="on" placeholder="密码" required/>
+        <input type="password" name=confirmPassword" id="confirmPassword" autocomplete="on" placeholder="确认密码" required/>
+        <input type="button" value="注册" onclick="register();"/>
+    </form>
+    <label id="label_reg">已有账号，<a href="#" onclick="showLogin();">现在登录</a></label>
+</div>
+
+<div id="chat">
+    <div id="writeToUsername" ></div>
+    <div class="myMessage">
+        <div class="myMessageTop"><img src="images/user.png" alt=""></div>
+        <div class="myMessageBottom">
+            <img src="images/xitong.png" alt="">
+            <div class="myMessageBtmMsg">
+                <ul>
+                    <li><a href="#" id="addFriend" onclick="addFriends();">添加好友</a></li>
+                    <li><a href="#">删除好友</a></li>
+                    <li><a href="#">黑名单</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <ul id="contactList">
+        </ul>
+    </div>
+    <div class="message_content">
+
+        <div class="getMsg">
+            <ul id="content">
+                <!--<li><img src="images/headImgs/a1.jpg" alt="" class="imgright"/><span class="spanright">2454565677</span></li>
+                <li><img src="images/headImgs/a1.jpg" alt="" class="imgleft"/><span class="spanleft">2454565677</span></li>-->
+            </ul>
+        </div>
+        <div class="inputMsg">
+
+            <div class="inputMsgSelect">
+                <div class="emoji"><img src="images/emoji_fill.png" alt="" onclick="showFace();" class="emojiImg"></div>
+                <div class="call" id="callFriend" ><img src="images/call.png" alt=""></div>
+                <div class="videoChat" id="callVideo" onclick="videoCall();"><img src="images/videoChat.png" alt=""></div>
+            </div>
+
+            <textarea id="message" cols="98" rows="9"></textarea>
+        </div>
+        <button class="sendMsg" value="" onclick="getInputMessage();">发送</button>
+    </div>
+</div>
+<div class="addFriend" id="addFriend_link">
+    <input type="text" placeholder="姓名" autofocus required id="friendName"/>
+    <input type="text" placeholder="备注" required id="friendRemark"/>
+    <input type="button" value="确认" id="confirm" onclick="closeWindow();"/>
+    <input type="button" value="取消" class="btn_no" id="btn_no1"/>
+</div>
+
+
+<div class="callBox" id="callBox">
+    <div class="callBoxContent"><p>姓名</p></div>
+    <div class="callBoxContentFoot"><img src="images/接通电话.png" alt="" onclick="acceptCall();"><img src="images/no.png" alt="" onclick="closeCall();"></div>
+</div>
+
+<video controls id="video" autoplay>
+    <!--<source src="movie.mp4" type="video/mp4">-->
+    <!--<source src="movie.ogg" type="video/ogg">-->
+    您的浏览器不支持 video 标签。
+</video>
+
+
+
+<video width="320" height="240" controls id="localVideo" autoplay>
+    <!--<source src="movie.mp4" type="video/mp4">-->
+    <!--<source src="movie.ogg" type="video/ogg">-->
+    您的浏览器不支持 video 标签。
+</video>
+
+</body>
+
+
+<script>
+
+    var addFriend = document.getElementById("addFriend");
+    var addFriend_link = document.getElementById("addFriend_link");
+    var chat = document.getElementById("chat");
+    var btn_no1= document.getElementById("btn_no1");
+
+    btn_no1.onclick=function () {
+        addFriend_link.style.display ="none";
+        chat.style.opacity="1";
+    };
+
+</script>
+</html>

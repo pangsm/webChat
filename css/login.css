@@ -1,0 +1,406 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    background: url("../images/bg_talk.jpg") no-repeat;
+    background-size: cover;
+}
+
+#title {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+#center {
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    margin: 100px auto;
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 100px 0px white;
+    border-radius: 20px;
+    display: block;
+}
+
+form {
+    width: 600px;
+    font-size: 22px;
+    font-family: "Microsoft Yahei";
+    padding: 10px;
+    position: relative;
+    top: 100px;
+    left: 135px;
+}
+
+form input {
+    display: block;
+    width: 50%;
+    height: 30px;
+    margin: 20px 0;
+}
+
+/*???????????????????*/
+input:focus {
+    background-color: #ffe;
+}
+
+form input:last-child {
+    background: lightskyblue;
+}
+
+label {
+    width: 150px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 80px;
+    margin-left: 140px;
+}
+
+#center #label_login a {
+    color: white;
+}
+
+#form2 {
+    display: none;
+}
+
+#label_reg {
+    display: none;
+}
+
+#chat {
+    margin: 0;
+    padding: 0;
+    width: 1008px;
+    height: 556px;
+    margin: 60px auto;
+    margin-bottom: 0px;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px 0px;
+    border: 1px solid white;
+    border-radius: 10px;
+    /*overflow: hidden;*/
+}
+
+.myMessage {
+
+    width: 5%;
+    height: 100%;
+    float: left;
+    border-right: 1px solid #f2f2f2;
+    position: relative;
+}
+
+.myMessage .myMessageTop {
+    width: 60%;
+    height: 6%;
+    margin-left: 20%;
+    margin-top: 10px;
+    position: absolute;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.myMessage .myMessageBottom {
+    width: 60%;
+    height: 6%;
+    margin-left: 20%;
+    margin-bottom: -36px;
+    position: absolute;
+    top: 515px;
+    border-radius: 0px 0px 0px 10px;
+
+}
+
+.myMessage .myMessageBottom .myMessageBtmMsg {
+    width: 130px;
+    z-index: 3;
+    border: 1px solid white;
+    background: deepskyblue;
+    position: absolute;
+    bottom: 22px;
+    left: 0px;
+    display: none;
+}
+
+.myMessage .myMessageBottom:hover .myMessageBtmMsg {
+    display: block;
+}
+
+.myMessage .myMessageBottom .myMessageBtmMsg > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.myMessage .myMessageBottom .myMessageBtmMsg > ul > li {
+    border-bottom: 1px solid white;
+}
+
+.myMessage .myMessageBottom .myMessageBtmMsg > ul > li:last-child {
+    border-bottom: none;
+}
+
+.myMessage .myMessageTop > img, .myMessage .myMessageBottom > img {
+    width: 100%;
+    height: 100%;
+}
+
+.contact {
+
+    width: 25%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+
+.contact > ul {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+
+}
+
+.contact > ul >li{
+    margin: 10px auto;
+    border: 1px solid #5ffaff;
+    border-radius: 6px;
+    color: white;
+    width: 90%;
+    height: 20px;
+
+
+
+}
+
+.contact > ul >li>a{
+    width: 100%;
+    height: 100%;
+    line-height: 20px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+.message_content {
+    width: 69.9%;
+    height: 100%;
+    float: left;
+    position: relative;
+
+}
+
+.message_content .inputMsg .inputMsgSelect {
+    width: 100%;
+    height: 18%;
+    background: skyblue;
+}
+
+.message_content .inputMsg .inputMsgSelect .emoji > img,
+.message_content .inputMsg .inputMsgSelect .call > img,
+.message_content .inputMsg .inputMsgSelect .videoChat > img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+
+}
+
+#chat #writeToUsername {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    z-index: 3;
+    margin-left: 37%;
+    position: absolute;
+    top: 20px;
+    color: white;
+}
+
+.message_content .getMsg {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+
+}
+
+/*/!*����Ϣ�Ľ�������*!/*/
+
+#content {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#content li {
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 30px;
+    width: 100%;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+#content li img {
+    float: left;
+    width: 40px;
+    height: 40px;
+
+}
+
+#content li span {
+    background: #7cfc00;
+    padding: 10px;
+    border-radius: 10px;
+    float: left;
+    margin: 6px 10px 0 10px;
+    max-width: 310px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 3px #ccc;
+}
+
+#content li .imgleft {
+    float: left;
+    margin-left: 18px;
+}
+
+#content li .imgright {
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-right: 40px;
+}
+
+#content li .spanleft {
+    float: left;
+    background: #fff;
+}
+
+#content li .spanright {
+    float: right;
+    background: #7cfc00;
+}
+
+.message_content .inputMsg {
+    width: 100%;
+    height: 30%;
+}
+
+.message_content .inputMsg > textarea {
+    background: skyblue;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.message_content .sendMsg {
+    position: absolute;
+    width: 70px;
+    right: 10px;
+    bottom: 5px;
+}
+
+/*��Ӻ���ģ̬����*/
+#addFriend_link {
+    width: 400px;
+    height: 300px;
+    z-index: 3;
+    background: #3c4e88;
+    border: 1px solid white;
+    position: fixed;
+    left: 35%;
+    top: 25%;
+    display: none;
+
+}
+
+#addFriend_link > input:nth-child(1), #addFriend_link > input:nth-child(2) {
+    display: block;
+    width: 40%;
+    height: 25px;
+    margin: 50px auto;
+}
+
+#addFriend_link > input:nth-child(3) {
+    width: 10%;
+    height: 23px;
+    margin-left: 30%;
+}
+
+#addFriend_link > input:nth-child(4) {
+    width: 10%;
+    height: 23px;
+    margin-left: 19%;
+
+}
+
+.callBox {
+    width: 120px;
+    height: 280px;
+    position: fixed;
+    top: 25%;
+    left: 36%;
+    background: skyblue;
+    display: none;
+}
+
+.callBox .callBoxContent {
+    width: 100%;
+    height: 240px;
+}
+
+.callBox .callBoxContentFoot {
+    width: 100%;
+    height: 40px;
+    bottom: 0px;
+}
+
+.callBox .callBoxContentFoot > img {
+    width: 40px;
+    height: 40px;
+}
+
+.callBox .callBoxContentFoot > img:last-child {
+    margin-left: 40px;
+}
+
+#video {
+    width: 320px;
+    height: 240px;
+    position: fixed;
+    top: 10%;
+    left: 37%;
+    display: none;
+}
+#localVideo{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 10%;
+    left: 37%;
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+    background-color: #18aef0;
+}
+
+
+
+
+
+
+
